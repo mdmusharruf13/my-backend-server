@@ -1,7 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 const PORT = 1082;
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST'],
+    credentials: true
+}));
 
 app.get("/main", async (req, res) => {
     try {
