@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 1082;
 
-app.get("/", async (req, res) => {
+app.get("/main", async (req, res) => {
     try {
         const apiResponse = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.3724&lng=78.4378&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING", {
             headers: {
@@ -17,7 +17,7 @@ app.get("/", async (req, res) => {
         }
 
         const responseData = await apiResponse.json();
-        res.json(responseData); // Send the JSON response back to the client
+        res.json(responseData);
     } catch (error) {
         console.error("Fetch error:", error);
         res.status(500).json({ error: "Error fetching data from the API" });
