@@ -5,7 +5,7 @@ const app = express();
 const PORT = 1082;
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://mmfoods.netlify.app',
     methods: ['GET', 'POST'],
     credentials: true
 }));
